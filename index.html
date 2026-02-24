@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Save Mohammadia Masjid | Donation Campaign</title>
+    <style>
+        /* --- CSS STYLES --- */
+        :root {
+            --primary-green: #0b422a;
+            --dark-green: #062618;
+            --accent-gold: #d4af37;
+            --text-dark: #333333;
+            --bg-light: #f9f9f9;
+            --white: #ffffff;
+            --soft-green: #e8f5e9;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        header {
+            background-color: var(--primary-green);
+            color: var(--white);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--accent-gold);
+            letter-spacing: 1px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--accent-gold);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--dark-green) 0%, var(--primary-green) 100%);
+            min-height: 85vh;
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 40px;
+            align-items: center;
+            padding: 4rem 5%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            color: var(--white);
+            max-width: 650px;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 3.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--accent-gold);
+            line-height: 1.15;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 2.5rem;
+            color: #e0e0e0;
+        }
+
+        .hero-visual {
+            position: relative;
+            text-align: center;
+            z-index: 2;
+        }
+
+        .vision-badge {
+            position: absolute;
+            top: -25px;
+            right: 15%;
+            background: var(--accent-gold);
+            color: var(--dark-green);
+            padding: 12px 25px;
+            border-radius: 30px;
+            font-weight: 800;
+            font-size: 1.1rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+            z-index: 3;
+            letter-spacing: 0.5px;
+        }
+
+        .vision-img {
+            width: 100%;
+            max-width: 480px;
+            border-radius: 20px;
+            box-shadow: 0 20px 50px rgba(212, 175, 55, 0.35);
+            border: 4px solid var(--accent-gold);
+            animation: float 5s ease-in-out infinite;
+            display: block;
+            margin: 0 auto;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-12px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .btn {
+            background-color: var(--accent-gold);
+            color: var(--primary-green);
+            padding: 16px 40px;
+            text-decoration: none;
+            font-weight: 800;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            display: inline-block;
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+            text-align: center;
+        }
+
+        .btn:hover {
+            background-color: #ffe066;
+            transform: translateY(-4px);
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.6);
+        }
+
+        /* Content Sections */
+        .section {
+            padding: 6rem 5%;
+        }
+
+        .section-title {
+            text-align: center;
+            color: var(--primary-green);
+            font-size: 2.8rem;
+            margin-bottom: 3.5rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 5px;
+            background-color: var(--accent-gold);
+            margin: 15px auto 0;
+            border-radius: 3px;
+        }
+
+        /* Crisis Section */
+        .crisis-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: flex-start;
+        }
+
+        .crisis-text h3 {
+            color: var(--primary-green);
+            margin-bottom: 15px;
+            font-size: 1.6rem;
+        }
+
+        .crisis-text ul {
+            list-style-type: none;
+            margin-top: 20px;
+        }
+
+        .crisis-text ul li {
+            margin-bottom: 15px;
+            padding-left: 30px;
+            position: relative;
+            font-size: 1.1rem;
+        }
+
+        .crisis-text ul li::before {
+            content: '✓';
+            color: var(--accent-gold);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+            font-size: 1.3rem;
+        }
+
+        .crisis-photo-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .crisis-photo-grid img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            border: 2px solid #e0e0e0;
+        }
+        
+        /* Special styling so the government notice is readable */
+        .notice-img {
+            grid-column: 1 / -1;
+            height: auto !important;
+            max-height: 400px;
+            object-fit: contain !important;
+            background-color: white;
+            padding: 5px;
+        }
+
+        /* Importance Section */
+        .importance-content {
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--white);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            border-top: 6px solid var(--primary-green);
+        }
+
+        .importance-content p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        .importance-content ul {
+            list-style-type: none;
+        }
+
+        .importance-content li {
+            font-size: 1.15rem;
+            margin-bottom: 20px;
+            padding-left: 35px;
+            position: relative;
+        }
+
+        .importance-content li::before {
+            content: '•';
+            color: var(--accent-gold);
+            position: absolute;
+            left: 0;
+            top: -5px;
+            font-weight: bold;
+            font-size: 2rem;
+        }
+
+        /* Location and Invitation Section */
+        .invitation-container {
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .invitation-alert {
+            background-color: #fff3cd;
+            border-left: 6px solid #ffc107;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 1.2rem;
+            color: #856404;
+            text-align: left;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        .map-wrapper {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            border: 3px solid var(--primary-green);
+            margin: 30px 0;
+            background: #e9ecef;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 350px;
+            position: relative;
+        }
+
+        .map-wrapper iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* Virtues / Hadith Section */
+        .virtues-section {
+            background-color: var(--soft-green);
+            border-top: 5px solid var(--accent-gold);
+            border-bottom: 5px solid var(--accent-gold);
+        }
+
+        .virtues-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .hadith-card {
+            background: var(--white);
+            padding: 35px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border-left: 6px solid var(--primary-green);
+            transition: transform 0.3s ease;
+        }
+
+        .hadith-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.1);
+        }
+
+        .hadith-card h4 {
+            color: var(--accent-gold);
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .hadith-text {
+            font-size: 1.15rem;
+            font-style: italic;
+            margin-bottom: 15px;
+            color: #444;
+            line-height: 1.8;
+        }
+
+        .hadith-source {
+            font-size: 1rem;
+            color: var(--primary-green);
+            font-weight: bold;
+            text-align: right;
+        }
+
+        /* Gallery Section */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            max-width: 700px;
+            margin: 0 auto 50px;
+            gap: 25px;
+        }
+
+        .gallery-item {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            border: 3px solid var(--primary-green);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+
+        /* User Upload Form */
+        .upload-section {
+            background-color: var(--soft-green);
+            padding: 4rem 2rem;
+            border-radius: 15px;
+            text-align: center;
+            border: 3px dashed var(--primary-green);
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* Donation Section */
+        .donate-section {
+            background-color: var(--primary-green);
+            color: var(--white);
+            text-align: center;
+        }
+
+        .donate-section .section-title {
+            color: var(--accent-gold);
+        }
+
+        .donate-section .section-title::after {
+            background-color: var(--white);
+        }
+
+        .payment-methods {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 35px;
+            margin-top: 50px;
+        }
+
+        .qr-card {
+            background: var(--white);
+            color: var(--text-dark);
+            padding: 40px 30px;
+            border-radius: 15px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.25);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border-bottom: 6px solid var(--accent-gold);
+        }
+
+        .qr-card h3 {
+            color: var(--primary-green);
+            margin-bottom: 20px;
+            font-size: 1.6rem;
+            border-bottom: 2px solid var(--soft-green);
+            padding-bottom: 15px;
+        }
+
+        .qr-card img {
+            width: 100%;
+            max-width: 260px;
+            height: auto;
+            margin: 0 auto 20px;
+            display: block;
+        }
+
+        .bank-details p {
+            margin-bottom: 12px;
+            font-size: 1.15rem;
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 8px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #041a10;
+            color: var(--white);
+            text-align: center;
+            padding: 4rem 5%;
+        }
+
+        footer a {
+            color: var(--accent-gold);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        footer a:hover {
+            color: var(--white);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 968px) {
+            .hero {
+                grid-template-columns: 1fr;
+                text-align: center;
+                padding-top: 3rem;
+            }
+            .hero-content {
+                margin: 0 auto;
+            }
+            .hero h1 {
+                font-size: 3rem;
+            }
+            .vision-badge {
+                right: 50%;
+                transform: translateX(50%);
+                top: -15px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .crisis-grid {
+                grid-template-columns: 1fr;
+            }
+            nav ul {
+                display: none; 
+            }
+            .section {
+                padding: 4rem 5%;
+            }
+            .bank-details p {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">Mohammadia Masjid</div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#crisis">The Crisis</a></li>
+                <li><a href="#importance">Importance</a></li>
+                <li><a href="#visit">Visit Us</a></li>
+                <li><a href="#donate">Donate</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Urgent Appeal:<br>Save Mohammadia Masjid</h1>
+            <p>Our Masjid is facing an existential threat from a 24-meter road widening project. Stand with the Anjuman Talimul Quran trust to secure the only masjid in Mundhwa before it's too late.</p>
+            <a href="#donate" class="btn">Donate Now to Protect Our Masjid</a>
+        </div>
+        
+        <div class="hero-visual">
+            <div class="vision-badge">✨ Our Vision for the Future</div>
+            <img src="hero-masjid.png" alt="Future Design of Mohammadia Masjid" class="vision-img">
+        </div>
+    </section>
+
+    <section id="crisis" class="section">
+        <h2 class="section-title">The Challenge & Our Plan</h2>
+        <div class="crisis-grid">
+            <div class="crisis-text">
+                <h3>Directly in the Path of Clearance</h3>
+                <p>We have received official notice that Mohammadia Masjid is directly in the path of a government 24-meter road widening project. As shown by the official Pune Municipal Corporation notice and images below, the roads are already being dug up, and the marking clearly cuts into the Masjid property. To save it from complete demolition, we must act immediately to reorganise and rebuild.</p>
+                <h3 style="margin-top: 30px;">Our Reconstruction Goals (~1 Crore INR Budget):</h3>
+                <ul>
+                    <li>Secure the structure against the road widening impact.</li>
+                    <li>Construct a proper staircase for safe access.</li>
+                    <li>Build a dedicated Wazu (ablution) area and additional toilets.</li>
+                    <li>Construct an additional floor for a spacious Namaz area.</li>
+                </ul>
+            </div>
+            
+            <div class="crisis-photo-grid">
+                <img src="Notice.jpeg" alt="Official Pune Municipal Corporation Notice" class="notice-img">
+                <img src="crisis-1.jpeg" alt="Road dug up outside Masjid">
+                <img src="crisis-2.jpeg" alt="Government marking 6.50 W">
+                <img src="crisis-3.jpeg" alt="Bus passing on the narrowed road">
+            </div>
+        </div>
+    </section>
+
+    <section id="importance" class="section">
+        <h2 class="section-title">The Importance of This Masjid</h2>
+        <div class="importance-content">
+            <p style="color: var(--primary-green); font-weight: bold; text-align: center; font-size: 1.4rem; border-bottom: 2px solid var(--soft-green); padding-bottom: 20px; margin-bottom: 30px;">
+                By saving this Masjid, you are preserving the only place of worship for an entire community and an essential facility for travellers, multiplying the reward of your Sadaqah-e-Jariyah.
+            </p>
+            <p>This is the only masjid in Mundhwa. Its location makes it irreplaceable:</p>
+            <ul>
+                <li>
+                    <strong>Only Masjid in Mundhwa:</strong> It serves the thousands of Muslim residents living in this rapidly growing area. If demolished, the community will be left with no place for daily prayers, Friday prayers, or Eid gatherings.
+                </li>
+                <li>
+                    <strong>Nearest Masjid to the Railway Station:</strong> Mohammadia Masjid is the only masjid located near Hadapsar Railway Station. The station is now a fully developed stop where all express trains on major routes (including Hyderabad and Solapur) halt. This makes our Masjid a vital spiritual waypoint for countless Muslim passengers passing through Pune daily.
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="visit" class="section" style="background-color: var(--white);">
+        <h2 class="section-title">Join Us for Prayer</h2>
+        <div class="invitation-container">
+            
+            <div class="invitation-alert">
+                <strong>Current Situation:</strong> Our Masjid is not big enough to accommodate the local crowd due to a severe shortage of space. In fact, we are currently hosting two Jamaats for Jumma prayers just to fit everyone. 
+            </div>
+
+            <p style="font-size: 1.25rem; margin-bottom: 20px; color: var(--text-dark);">
+                We warmly invite you to visit Mohammadia Masjid, join us for your daily prayers, and witness the pressing need of our community firsthand. Your generous donations will help us build a more spacious and permanent house of Allah.
+            </p>
+
+            <div class="map-wrapper">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3783.0805364816353!2d73.9238913153648!3d18.5251860874059!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c18086054f15%3A0x647bf0c2bd5cb5b4!2sHadapsar%20Railway%20Station!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+
+            <a href="https://maps.app.goo.gl/Dgmb2fRhocfo69SW7?g_st=aw" target="_blank" class="btn" style="padding: 15px 35px;">
+                📍 Open in Google Maps
+            </a>
+        </div>
+    </section>
+
+    <section id="virtues" class="section virtues-section">
+        <h2 class="section-title">The Spiritual Reward: Sadaqah Jariyah</h2>
+        <div class="virtues-grid">
+            
+            <div class="hadith-card">
+                <h4>✨ A House in Paradise</h4>
+                <p class="hadith-text">"Whoever builds a mosque for the sake of Allah, Allah will build a house for him in Paradise."</p>
+                <p class="hadith-source">— Sahih Muslim (533c), Sunan Ibn Majah (737)</p>
+            </div>
+
+            <div class="hadith-card">
+                <h4>🕊️ Even the Smallest Contribution</h4>
+                <p class="hadith-text">"...whoever builds a mosque for Allah's sake—even if it is as small as a bird's nest—Allah will reward them with a house in Paradise."</p>
+                <p class="hadith-source">— Ibn Majah</p>
+            </div>
+
+            <div class="hadith-card">
+                <h4>🌱 Continuous Charity</h4>
+                <p class="hadith-text">"When a man dies, his deeds come to an end except for three: Sadaqah Jariyah (ongoing charity), beneficial knowledge, or a righteous child who prays for him."</p>
+                <p class="hadith-source">— Sahih Muslim (3084)</p>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="gallery" class="section" style="background-color: var(--white);">
+        <h2 class="section-title">Community Updates</h2>
+        
+        <div class="gallery-grid">
+            <img src="update-1.jpeg" alt="Current state of Masjid" class="gallery-item">
+        </div>
+
+        <div class="upload-section">
+            <h3 style="color: var(--primary-green); margin-bottom: 10px; font-size: 2rem;">Share Real-Time Progress</h3>
+            <p style="font-size: 1.2rem; margin-bottom: 25px;">Are you volunteering on-site? Upload your photos directly here to keep our donors updated!</p>
+            
+            <form action="YOUR_BACKEND_ENDPOINT_URL_HERE" method="POST" enctype="multipart/form-data">
+                <input type="file" name="file" accept="image/*,video/*" multiple required style="margin-bottom: 20px; font-size: 1.1rem; width: 100%; max-width: 300px;">
+                <br>
+                <input type="text" name="volunteer_name" placeholder="Your Name (Optional)" style="margin-bottom: 20px; padding: 10px; border-radius: 5px; border: 1px solid #ccc; width: 100%; max-width: 300px;">
+                <br>
+                <button type="submit" class="btn" style="padding: 15px 40px; font-size: 1.1rem;">
+                    📤 Upload Media
+                </button>
+            </form>
+            <p style="margin-top: 15px; font-size: 0.9rem; color: #666;">Files will be securely sent to the Masjid administration.</p>
+        </div>
+    </section>
+
+    <section id="donate" class="section donate-section">
+        <h2 class="section-title">Support The Construction Today</h2>
+        <p style="font-size: 1.3rem; max-width: 800px; margin: 0 auto;">Every rupee given with sincerity is accepted by Allah and multiplied beyond measure. Do not underestimate your contribution.</p>
+        
+        <div class="payment-methods">
+            
+            <div class="qr-card">
+                <h3>Scan & Pay via UPI</h3>
+                <img src="masjid-qr.jpeg" alt="UPI QR Code for Anjuman Talimul Quran">
+                <p style="margin-top: 15px; font-weight: 800; font-size: 1.3rem; color: var(--primary-green);">UPI ID: bom260201332414@mahb</p>
+            </div>
+
+            <div class="qr-card">
+                <h3>Pay via Online Gateway</h3>
+                <p style="font-size: 1.1rem; margin-bottom: 30px; color: #555;">Secure online payments via Credit, Debit, or Netbanking processed safely through Razorpay.</p>
+                <a href="https://pages.razorpay.com/pl_YOUR_PAGE_LINK_HERE" class="btn" target="_blank" style="width: 100%; text-align: center; display: block; box-sizing: border-box;">
+                    Donate via Razorpay
+                </a>
+                <p style="margin-top: 20px; font-size: 0.9rem; color: #888;">You will be redirected to our secure payment gateway.</p>
+            </div>
+
+            <div class="qr-card bank-details">
+                <h3>Direct Bank Transfer</h3>
+                <p><strong>Account Name:</strong> <span>Anjuman Talimul Quran</span></p>
+                <p><strong>Bank:</strong> <span>Bank of Maharashtra</span></p>
+                <p><strong>Branch:</strong> <span>Mundhwa Branch</span></p>
+                <p><strong>A/c No:</strong> <span>60565681885</span></p>
+                <p><strong>IFSC:</strong> <span>MAHB0000135</span></p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <h3 style="color: var(--accent-gold); margin-bottom: 12px; font-size: 1.5rem;">Anjuman Talimul Quran (Reg. No. F-16030/99)</h3>
+        <p style="font-size: 1.1rem;">Hadapsar Railway Station, Mundhwa, Pune - 411036</p>
+        <p style="margin-top: 20px; font-size: 1.1rem;">For inquiries: Munir Khan Pathan (9370144584) | Imran Shaikh (9326482048)</p>
+        <p style="margin-top: 5px; font-size: 1.1rem;">Email: <a href="mailto:mohammadiamasjid8@gmail.com">mohammadiamasjid8@gmail.com</a></p>
+        <p style="margin-top: 30px; font-size: 1rem; opacity: 0.7;">Jazakallah Khair for your generous support.</p>
+    </footer>
+
+</body>
+</html>
