@@ -162,6 +162,14 @@
             box-shadow: 0 8px 25px rgba(212, 175, 55, 0.6);
         }
 
+        .btn:disabled {
+            background-color: #cccccc;
+            color: #666666;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
         /* Content Sections */
         .section {
             padding: 6rem 5%;
@@ -235,7 +243,6 @@
             border: 2px solid #e0e0e0;
         }
         
-        /* Special styling so the government notice is readable */
         .notice-img {
             grid-column: 1 / -1;
             height: auto !important;
@@ -643,16 +650,18 @@
             <h3 style="color: var(--primary-green); margin-bottom: 10px; font-size: 2rem;">Share Real-Time Progress</h3>
             <p style="font-size: 1.2rem; margin-bottom: 25px;">Are you volunteering on-site? Upload your photos directly here to keep our donors updated!</p>
             
-            <form action="https://forminit.com/thank-you" method="POST" enctype="multipart/form-data">
-                <input type="file" name="file" accept="image/*,video/*" multiple required style="margin-bottom: 20px; font-size: 1.1rem; width: 100%; max-width: 300px;">
+            <form id="upload-form" enctype="multipart/form-data">
+                <input type="file" name="fi-file-progressMedia" accept="image/*,video/*" multiple required style="margin-bottom: 20px; font-size: 1.1rem; width: 100%; max-width: 300px;">
                 <br>
-                <input type="text" name="volunteer_name" placeholder="Your Name (Optional)" style="margin-bottom: 20px; padding: 10px; border-radius: 5px; border: 1px solid #ccc; width: 100%; max-width: 300px;">
+                <input type="text" name="fi-sender-fullName" placeholder="Your Name (Optional)" style="margin-bottom: 20px; padding: 10px; border-radius: 5px; border: 1px solid #ccc; width: 100%; max-width: 300px;">
                 <br>
-                <button type="submit" class="btn" style="padding: 15px 40px; font-size: 1.1rem;">
+                <button type="submit" id="submit-btn" class="btn" style="padding: 15px 40px; font-size: 1.1rem;">
                     📤 Upload Media
                 </button>
             </form>
-            <p style="margin-top: 15px; font-size: 0.9rem; color: #666;">Files will be securely sent to the Masjid administration.</p>
+            
+            <p id="form-result" style="margin-top: 15px; font-size: 1.1rem; font-weight: bold;"></p>
+            <p style="margin-top: 5px; font-size: 0.9rem; color: #666;">Files will be securely sent to the Masjid administration.</p>
         </div>
     </section>
 
@@ -696,6 +705,42 @@
         <p style="margin-top: 30px; font-size: 1rem; opacity: 0.7;">Jazakallah Khair for your generous support.</p>
     </footer>
 
+    <script src="https://forminit.com/sdk/v1/forminit.js"></script>
+    <script>
+        const forminit = new Forminit();
+        const FORM_ID = '0snuln6cp61'; // Your required Form ID
+        
+        const form = document.getElementById('upload-form');
+        const submitBtn = document.getElementById('submit-btn');
+        const resultMessage = document.getElementById('form-result');
+        
+        form.addEventListener('submit', async function(event) {
+            event.preventDefault();
+            
+            // Show loading state to the user while images upload
+            submitBtn.innerHTML = '⏳ Uploading...';
+            submitBtn.disabled = true;
+            resultMessage.textContent = '';
+            
+            // Because your form has files, we must use FormData
+            const formData = new FormData(form);
+            const { data, redirectUrl, error } = await forminit.submit(FORM_ID, formData);
+            
+            // Re-enable button after processing
+            submitBtn.innerHTML = '📤 Upload Media';
+            submitBtn.disabled = false;
+            
+            if (error) {
+                resultMessage.style.color = 'red';
+                resultMessage.textContent = 'Error: ' + error.message;
+                return;
+            }
+            
+            // Show success message and clear the form fields
+            resultMessage.style.color = 'var(--primary-green)';
+            resultMessage.textContent = 'Jazakallah Khair! Your media was uploaded successfully.';
+            form.reset();
+        });
+    </script>
 </body>
-
 </html>
