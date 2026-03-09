@@ -30,7 +30,6 @@
             overflow-x: hidden;
         }
 
-        /* Navigation */
         header {
             background-color: var(--primary-green);
             color: var(--white);
@@ -69,7 +68,6 @@
             color: var(--accent-gold);
         }
 
-        /* Hero Section */
         .hero {
             background: linear-gradient(135deg, var(--dark-green) 0%, var(--primary-green) 100%);
             min-height: 85vh;
@@ -151,7 +149,10 @@
             transition: all 0.3s ease;
             border: none;
             cursor: pointer;
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
             box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
             text-align: center;
         }
@@ -162,7 +163,6 @@
             box-shadow: 0 8px 25px rgba(212, 175, 55, 0.6);
         }
 
-        /* Content Sections */
         .section {
             padding: 6rem 5%;
         }
@@ -185,7 +185,6 @@
             border-radius: 3px;
         }
 
-        /* Crisis Section */
         .crisis-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -236,7 +235,6 @@
             border: 2px solid #e0e0e0;
         }
         
-        /* THIS STYLES THE SINGLE NOTICE TO BE FULL WIDTH */
         .notice-img {
             grid-column: 1 / -1;
             height: auto !important;
@@ -247,7 +245,6 @@
             border: 2px solid var(--accent-gold) !important;
         }
 
-        /* Importance Section */
         .importance-content {
             max-width: 900px;
             margin: 0 auto;
@@ -284,7 +281,6 @@
             font-size: 2rem;
         }
 
-        /* Location and Invitation Section */
         .invitation-container {
             text-align: center;
             max-width: 900px;
@@ -313,7 +309,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            height: 350px;
+            height: 400px;
             position: relative;
         }
 
@@ -323,7 +319,6 @@
             border: 0;
         }
 
-        /* Virtues / Hadith Section */
         .virtues-section {
             background-color: var(--soft-green);
             border-top: 5px solid var(--accent-gold);
@@ -374,7 +369,6 @@
             text-align: right;
         }
 
-        /* Gallery Section */
         .gallery-grid {
             display: grid;
             grid-template-columns: 1fr;
@@ -391,7 +385,6 @@
             box-shadow: 0 8px 20px rgba(0,0,0,0.1);
         }
 
-        /* User Upload Form */
         .upload-section {
             background-color: var(--soft-green);
             padding: 4rem 2rem;
@@ -402,7 +395,6 @@
             margin: 0 auto;
         }
 
-        /* Contact Section */
         .contact-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -468,7 +460,6 @@
             color: var(--dark-green);
         }
 
-        /* Donation Section */
         .donate-section {
             background-color: var(--primary-green);
             color: var(--white);
@@ -527,7 +518,6 @@
             padding-bottom: 8px;
         }
 
-        /* Footer */
         footer {
             background-color: #041a10;
             color: var(--white);
@@ -545,7 +535,6 @@
             color: var(--white);
         }
 
-        /* Responsive Design */
         @media (max-width: 968px) {
             .hero {
                 grid-template-columns: 1fr;
@@ -620,7 +609,7 @@
                 <p>We have received official notice that Mohammadia Masjid is directly in the path of a government 24-meter road widening project. As shown by the official Pune Municipal Corporation notice and images below, the roads are already being dug up, and the marking clearly cuts into the Masjid property. To save it from complete demolition, we must act immediately to reorganise and rebuild.</p>
                 
                 <div style="margin: 25px 0;">
-                    <a href="Notice.pdf" target="_blank" class="btn" style="padding: 12px 25px; font-size: 1.1rem; background-color: var(--primary-green); color: var(--accent-gold); border: 2px solid var(--accent-gold); width: 100%; display: block;">
+                    <a href="Notice.pdf" target="_blank" class="btn" style="padding: 12px 25px; font-size: 1.1rem; background-color: var(--primary-green); color: var(--accent-gold); border: 2px solid var(--accent-gold); width: 100%; display: flex;">
                         📄 View Official PMC Notice (PDF)
                     </a>
                 </div>
@@ -656,7 +645,7 @@
                     <strong>Only Masjid in Mundhwa:</strong> It serves the thousands of Muslim residents living in this rapidly growing area. If demolished, the community will be left with no place for daily prayers, Friday prayers, or Eid gatherings.
                 </li>
                 <li>
-                    <strong>Nearest Masjid to the Railway Station:</strong> Mohammadia Masjid is the only masjid located near Hadapsar Railway Station. The station is now a fully developed stop where all express trains on major routes (including Hyderabad and Solapur) halt. This makes our Masjid a vital spiritual waypoint for countless Muslim passengers passing through Pune daily.
+                    <strong>Nearest Masjid to the Railway Station:</strong> Mohammadia Masjid is the only masjid located near Hadapsar Railway Station. The station is now a fully developed stop where all express trains on major routes halt. This makes our Masjid a vital spiritual waypoint for countless Muslim passengers passing through Pune daily.
                 </li>
             </ul>
         </div>
@@ -667,7 +656,7 @@
         <div class="invitation-container">
             
             <div class="invitation-alert">
-                <strong>Current Situation:</strong> Our Masjid is not big enough to accommodate the local crowd due to a severe shortage of space. In fact, we are currently hosting two Jamaats for Jumma prayers just to fit everyone. 
+                <strong>Current Situation:</strong> Our Masjid is not big enough to accommodate the local crowd due to a severe shortage of space. In fact, we are currently hosting two Jamaats for Jumma prayers just to fit everyone.
             </div>
 
             <p style="font-size: 1.25rem; margin-bottom: 20px; color: var(--text-dark);">
@@ -675,10 +664,15 @@
             </p>
 
             <div class="map-wrapper">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3783.0805364816353!2d73.9238913153648!3d18.5251860874059!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c18086054f15%3A0x647bf0c2bd5cb5b4!2sHadapsar%20Railway%20Station!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1414.771212211212!2d73.914285!3d18.52047!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTjCsDMxJzEzLjciTiA3M8KwNTQnNTEuNCJF!5e0!3m2!1sen!2sin!4v1710000000000!5m2!1sen!2sin" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
             </div>
 
-            <a href="https://maps.app.goo.gl/Dgmb2fRhocfo69SW7?g_st=aw" target="_blank" class="btn" style="padding: 15px 35px;">
+            <a href="https://maps.app.goo.gl/B9p6vM8D5U8w5G6A8" target="_blank" class="btn" style="padding: 15px 35px;">
                 📍 Open in Google Maps
             </a>
         </div>
@@ -761,7 +755,7 @@
 
     <section id="donate" class="section donate-section">
         <h2 class="section-title">Support The Construction Today</h2>
-        <p style="font-size: 1.3rem; max-width: 800px; margin: 0 auto;">Every rupee given with sincerity is accepted by Allah and multiplied beyond measure. Do not underestimate your contribution.</p>
+        <p style="font-size: 1.3rem; max-width: 800px; margin: 0 auto; margin-bottom: 40px;">Every rupee given with sincerity is accepted by Allah and multiplied beyond measure. Do not underestimate your contribution.</p>
         
         <div class="payment-methods">
             
@@ -769,15 +763,26 @@
                 <h3>Scan & Pay via UPI</h3>
                 <img src="masjid-qr.jpeg" alt="UPI QR Code for Anjuman Talimul Quran">
                 <p style="margin-top: 15px; font-weight: 800; font-size: 1.3rem; color: var(--primary-green);">UPI ID: bom260201332414@mahb</p>
+                <p style="font-size: 0.9rem; color: #777; margin-top: 10px;">Supported Apps: GPay, PhonePe, Paytm, BHIM</p>
             </div>
 
             <div class="qr-card">
-                <h3>Pay via Online Gateway</h3>
-                <p style="font-size: 1.1rem; margin-bottom: 30px; color: #555;">Secure online payments via Credit, Debit, or Netbanking processed safely through Razorpay.</p>
-                <a href="https://pages.razorpay.com/pl_YOUR_PAGE_LINK_HERE" class="btn" target="_blank" style="width: 100%; text-align: center; display: block; box-sizing: border-box;">
-                    Donate via Razorpay
+                <h3>International Gateway</h3>
+                <div style="text-align: center; margin-bottom: 15px;">
+                    <img src="https://razorpay.com/assets/razorpay-glyph.svg" alt="Razorpay Logo" style="width: 40px; opacity: 0.8;">
+                </div>
+                <p style="font-size: 1.1rem; margin-bottom: 25px; color: #555;">Support us globally via Credit Card, Debit Card, or Netbanking.</p>
+                <a href="https://rzp.io/rzp/17LCNSc5" class="btn" target="_blank" style="width: 100%; padding: 12px;">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 8px;">
+                        <path d="M20 4H4C2.89 4 2.01 4.89 2.01 6L2 18C2 19.11 2.89 20 4 20H20C21.11 20 22 19.11 22 18V6C22 4.89 21.11 4 20 4ZM20 18H4V12H20V18ZM20 8H4V6H20V8Z"/>
+                    </svg>
+                    Donate Now
                 </a>
-                <p style="margin-top: 20px; font-size: 0.9rem; color: #888;">You will be redirected to our secure payment gateway.</p>
+                <div style="margin-top: 20px; display: flex; justify-content: center; gap: 10px; opacity: 0.5;">
+                    <img src="https://img.icons8.com/color/48/000000/visa.png" width="25">
+                    <img src="https://img.icons8.com/color/48/000000/mastercard.png" width="25">
+                    <img src="https://img.icons8.com/color/48/000000/amex.png" width="25">
+                </div>
             </div>
 
             <div class="qr-card bank-details">
@@ -787,6 +792,9 @@
                 <p><strong>Branch:</strong> <span>Mundhwa Branch</span></p>
                 <p><strong>A/c No:</strong> <span>60565681885</span></p>
                 <p><strong>IFSC:</strong> <span>MAHB0000135</span></p>
+                <div style="margin-top: 20px; padding: 10px; background: var(--soft-green); border-radius: 8px; font-size: 0.9rem; color: var(--primary-green); font-weight: bold;">
+                    Recommended for larger contributions
+                </div>
             </div>
         </div>
     </section>
